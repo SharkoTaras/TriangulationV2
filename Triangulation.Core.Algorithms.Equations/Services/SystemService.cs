@@ -128,8 +128,8 @@ namespace Triangulation.Core.Algorithms.Equations.Services
             var m1V = Matrix.Create<double>(1, 3, MatrixElementOrder.RowMajor).AddInPlace(vec, Dimension.Columns);
 
             StiffnessMatrix = (DenseMatrix<double>)((((EquationConstatns.a11 * (k1T * k1V)) +
-                                                     (EquationConstatns.a22 * (k2T * k2V))) / (4 * triangle.Square)) +
-                                                     (EquationConstatns.d * (m1T * m1V)));
+                                                      (EquationConstatns.a22 * (k2T * k2V))) / (4 * triangle.Square)) +
+                                                      (EquationConstatns.d * (m1T * m1V)));
         }
     }
 }

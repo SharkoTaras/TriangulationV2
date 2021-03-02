@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Threading;
@@ -77,7 +78,7 @@ namespace Triangulation.UI.Controls
             }
 
             sb.AppendLine("Answer:");
-            sb.AppendJoin(" ", answer);
+            sb.AppendJoin(Environment.NewLine, answer);
             sb.AppendLine();
             Data.Text = sb.ToString();
         }

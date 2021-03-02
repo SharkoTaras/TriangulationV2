@@ -79,10 +79,9 @@ namespace Triangulation.Core.Algorithms.Equations.Services
 
             UpdateProblem();
 
-            var ans = MatrixA.Solve(VectorF, overwrite: false);
-            CorrectAnswer = Vertices.Where(v => !v.IsOnBoundary(Boundary)).OrderBy(v => v.Id).Select(v => EquationConstatns.u(v.X, v.Y)).ToArray();
+            var ans = MatrixA.Solve(VectorF);
             SolutionError(ans.ToArray());
-            return ans.ToList();
+            return (-ans).ToList();
         }
 
         private void SolutionError(double[] sol)
